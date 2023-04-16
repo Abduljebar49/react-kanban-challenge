@@ -165,14 +165,14 @@ export default function Board() {
             >
               {repository?.owner.login}
             </a>
-            {repository.full_name != "" ? (
+            {repository.full_name !== "" ? (
               <span style={{ color: "black", fontSize: 18, marginRight: 2 }}>
                 &gt;
               </span>
             ) : null}
             <a
               href={repository?.html_url}
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               style={{ fontSize: 18 }}
             >
               {repository?.name}
@@ -183,9 +183,9 @@ export default function Board() {
       <div
         className="row"
       >
-        <Column title={"TO DO"} tasks={todo} id={"1"} />
-        <Column title={"IN PROGRESS"} tasks={inProgress} id={"2"} />
-        <Column title={"DONE"} tasks={done} id={"3"} />
+        <Column title={"ToDo"} tasks={todo} id={"1"} />
+        <Column title={"In Progress"} tasks={inProgress} id={"2"} />
+        <Column title={"Done"} tasks={done} id={"3"} />
       </div>
     </DragDropContext>
   );

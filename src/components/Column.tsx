@@ -31,12 +31,6 @@ const TaskList = styled.div`
   min-height: 100px;
 `;
 
-type ColumnProps = {
-  title: string;
-  tasks: [];
-  id: number;
-};
-
 export default function Column({
   title,
   tasks,
@@ -50,7 +44,7 @@ export default function Column({
     <div>
       <Title
         style={{
-          backgroundColor: "lightblue",
+          backgroundColor: "white",
           position: "sticky",
         }}
       >

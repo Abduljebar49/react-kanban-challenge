@@ -11,8 +11,7 @@ export const rootReducers = combineReducers({
 })
   
 export const store = configureStore({
-  reducer:repoSlice,
-  middleware: [thunk]
+  reducer:repoSlice
 });
 
 export const useAppDispatch: () => typeof store.dispatch = useDispatch;

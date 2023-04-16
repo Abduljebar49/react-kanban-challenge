@@ -1,8 +1,6 @@
-import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
-import { Avatar, Image } from "antd";
-import { IssueUser } from "../models/User";
+import { Avatar } from "antd";
 
 const Container = styled.div`
   border-radius: 10px;
@@ -20,8 +18,6 @@ const Container = styled.div`
   justify-content: space-between;
   flex-direction: column;
 `;
-
-const TextContent = styled.div``;
 
 const Icons = styled.div`
   display: flex;
@@ -48,8 +44,6 @@ export default function Task({ task, index }: { task: any; index: number }) {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays;
   }
-
-  const openUserProfile = (user: IssueUser) => {};
 
   return (
     <Draggable draggableId={`${task.id}`} key={task.id} index={index}>
@@ -100,7 +94,7 @@ export default function Task({ task, index }: { task: any; index: number }) {
             </span>
             <Icons>
               <div>
-                <a href={task.user.html_url} rel="noopener noreferrer">
+                <a href={task.user.html_url} target="_blank" rel="noopener noreferrer">
                   <Avatar
                     src={task.user.avatar_url}
                   />
